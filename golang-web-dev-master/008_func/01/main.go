@@ -26,8 +26,9 @@ type car struct {
 // "ft" is a func I declared
 // "ft" slices a string, returning the first three characters
 var fm = template.FuncMap{
-	"uc": strings.ToUpper,
-	"ft": firstThree,
+	"uc":  strings.ToUpper,
+	"ft":  firstThree,
+	"ibo": increaseByOne,
 }
 
 func init() {
@@ -40,6 +41,9 @@ func firstThree(s string) string {
 		s = s[:3]
 	}
 	return s
+}
+func increaseByOne(i int) string {
+	return (string)(i + 1)
 }
 
 func main() {
